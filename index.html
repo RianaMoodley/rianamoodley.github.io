@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Riana Moodley — final-year BEng Electrical Engineering student at the University of Zululand, with projects in power systems, energy harvesting, PLC automation and telecommunications.">
+<meta property="og:title" content="Riana Moodley — Electrical Engineer">
+<meta property="og:description" content="Final-year Electrical Engineering student: power systems, energy harvesting, PLC automation and telecommunications.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#16213d">
+<title>Riana Moodley — Electrical Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #16213d;          /* midnight navy */
+    --navy-2: #1f2d50;
+    --ivory: #fbf7f3;         /* warm ivory page */
+    --blush: #f6e7e6;         /* soft blush sections */
+    --blush-2: #efd6d6;
+    --rose: #b5626f;          /* dusty rose accent */
+    --rose-deep: #9a4c5a;
+    --rose-soft: rgba(181,98,111,0.1);
+    --gold: #c3a165;          /* champagne gold */
+    --gold-soft: rgba(195,161,101,0.16);
+    --ink: #1b2340;
+    --ink-2: #4a5170;
+    --muted: #7d8098;
+    --card: #ffffff;
+    --line: rgba(27,35,64,0.09);
+    --line-rose: rgba(181,98,111,0.22);
+    --serif: 'Playfair Display', Georgia, serif;
+    --sans: 'DM Sans', system-ui, sans-serif;
+    --r: 18px;
+    --shadow: 0 2px 6px rgba(22,33,61,0.04), 0 18px 40px -22px rgba(22,33,61,0.25);
+  }
+
+  html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+  body { background: var(--ivory); color: var(--ink); font-family: var(--sans); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+  .wrap { max-width: 1160px; margin: 0 auto; padding: 0 2rem; }
+  svg.i { width: 16px; height: 16px; flex: none; }
+
+  /* ---------- NAV ---------- */
+  nav {
+    position: fixed; inset: 0 0 auto 0; z-index: 100; height: 68px;
+    background: rgba(22,33,61,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(195,161,101,0.18);
+  }
+  .nav-inner { height: 100%; display: flex; align-items: center; justify-content: space-between; }
+  .logo { font-family: var(--serif); font-size: 21px; font-weight: 600; color: #fbf7f3; letter-spacing: .01em; }
+  .logo em { color: var(--gold); font-style: italic; }
+  .nav-links { display: flex; align-items: center; gap: .3rem; }
+  .nav-item { font-size: 14.5px; color: rgba(251,247,243,0.78); padding: 8px 14px; border-radius: 999px; transition: color .2s, background .2s; }
+  .nav-item:hover { color: #fff; background: rgba(255,255,255,0.07); }
+  .menu-btn { display: none; width: 40px; height: 40px; border-radius: 999px; border: 1px solid rgba(195,161,101,0.35); background: transparent; color: #fbf7f3; cursor: pointer; place-items: center; }
+  .menu-btn svg { width: 18px; height: 18px; }
+
+  /* ---------- BUTTONS ---------- */
+  .btn { display: inline-flex; align-items: center; gap: 8px; font-family: var(--sans); font-size: 14.5px; font-weight: 600; padding: 12px 24px; border-radius: 999px; border: 1px solid transparent; cursor: pointer; transition: all .2s; white-space: nowrap; }
+  .btn-rose { background: var(--rose); color: #fff; }
+  .btn-rose:hover { background: var(--rose-deep); transform: translateY(-1px); }
+  .btn-light { border-color: rgba(251,247,243,0.35); color: #fbf7f3; }
+  .btn-light:hover { border-color: var(--gold); color: var(--gold); }
+  .btn-gold { background: var(--gold); color: var(--navy); }
+  .btn-gold:hover { filter: brightness(1.07); transform: translateY(-1px); }
+  .btn-sm { padding: 8px 18px; font-size: 13.5px; margin-left: .5rem; }
+
+  /* ---------- HERO ---------- */
+  #hero { position: relative; background: var(--navy); color: #fbf7f3; padding: 150px 0 110px; overflow: hidden; }
+  #hero::before { content: ''; position: absolute; width: 620px; height: 620px; right: -160px; top: -180px; border-radius: 50%; background: radial-gradient(circle, rgba(181,98,111,0.32), transparent 65%); pointer-events: none; }
+  #hero::after { content: ''; position: absolute; width: 480px; height: 480px; left: -200px; bottom: -260px; border-radius: 50%; background: radial-gradient(circle, rgba(195,161,101,0.16), transparent 65%); pointer-events: none; }
+  .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1.25fr 1fr; gap: 4rem; align-items: center; }
+  .eyebrow { display: inline-flex; align-items: center; gap: 12px; font-size: 13px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
+  .eyebrow::before { content: ''; width: 34px; height: 1px; background: var(--gold); }
+  h1 { font-family: var(--serif); font-weight: 600; font-size: clamp(48px, 7vw, 86px); line-height: 1.02; letter-spacing: -0.01em; margin-bottom: 1.4rem; }
+  h1 em { font-style: italic; color: #e8b9bf; font-weight: 500; }
+  .hero-role { font-size: 19px; color: rgba(251,247,243,0.9); margin-bottom: .9rem; }
+  .hero-role b { color: var(--gold); font-weight: 600; }
+  .hero-lead { font-size: 16.5px; color: rgba(251,247,243,0.7); max-width: 540px; margin-bottom: 2.2rem; }
+  .hero-ctas { display: flex; flex-wrap: wrap; gap: .8rem; }
+
+  .portrait { position: relative; justify-self: end; width: 100%; max-width: 430px; }
+  .portrait-frame { position: relative; border-radius: 220px 220px var(--r) var(--r); overflow: hidden; aspect-ratio: 4/5; border: 1px solid rgba(195,161,101,0.45); box-shadow: 0 30px 60px -30px rgba(0,0,0,0.6); background: var(--navy-2); }
+  .portrait-frame img { width: 100%; height: 100%; object-fit: cover; object-position: 62% center; }
+  .portrait::before { content: ''; position: absolute; inset: -14px -14px 14px 14px; border-radius: 230px 230px 22px 22px; border: 1px solid rgba(232,185,191,0.35); pointer-events: none; }
+  .portrait-note { position: absolute; left: -28px; bottom: 30px; background: var(--ivory); color: var(--ink); border-radius: 14px; padding: .8rem 1.1rem; box-shadow: var(--shadow); font-size: 13.5px; line-height: 1.4; }
+  .portrait-note b { display: block; font-family: var(--serif); font-size: 17px; color: var(--rose-deep); }
+
+  /* ---------- AT A GLANCE ---------- */
+  .glance { position: relative; z-index: 2; margin-top: -44px; }
+  .glance-row { display: grid; grid-template-columns: repeat(4, 1fr); background: var(--card); border-radius: var(--r); box-shadow: var(--shadow); border: 1px solid var(--line); }
+  .g { padding: 1.5rem 1.7rem; border-right: 1px solid var(--line); }
+  .g:last-child { border-right: none; }
+  .g b { display: block; font-family: var(--serif); font-size: 26px; font-weight: 600; color: var(--navy); line-height: 1.2; }
+  .g span { font-size: 13px; color: var(--muted); }
+
+  /* ---------- SECTIONS ---------- */
+  section.block { padding: 104px 0; }
+  section.blush { background: var(--blush); }
+  .sec-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 2rem; flex-wrap: wrap; margin-bottom: 3.2rem; }
+  .kicker { font-size: 12.5px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--rose); margin-bottom: .8rem; display: flex; align-items: center; gap: 12px; }
+  .kicker::before { content: ''; width: 28px; height: 1px; background: var(--rose); }
+  h2 { font-family: var(--serif); font-weight: 600; font-size: clamp(32px, 4vw, 46px); line-height: 1.12; color: var(--navy); }
+  h2 em { font-style: italic; color: var(--rose); font-weight: 500; }
+  .sec-note { max-width: 380px; color: var(--ink-2); font-size: 15.5px; }
+
+  /* ---------- ABOUT ---------- */
+  .about-grid { display: grid; grid-template-columns: 1fr 1.05fr; gap: 4rem; }
+  .about-text p { color: var(--ink-2); font-size: 17px; margin-bottom: 1.15rem; }
+  .about-text strong { color: var(--navy); font-weight: 600; }
+  .mini { font-size: 12.5px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin: 1.8rem 0 .8rem; }
+  .pills { display: flex; flex-wrap: wrap; gap: 8px; }
+  .pill { font-size: 13.5px; padding: 6px 15px; border-radius: 999px; background: var(--card); border: 1px solid var(--line-rose); color: var(--rose-deep); }
+
+  .skills { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; align-content: start; }
+  .skill { background: var(--card); border-radius: 16px; padding: 1.4rem; border: 1px solid var(--line); box-shadow: 0 10px 26px -22px rgba(22,33,61,0.35); }
+  .skill h3 { display: flex; align-items: center; gap: 11px; font-size: 16px; font-weight: 600; color: var(--navy); margin-bottom: .8rem; }
+  .ic { width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; background: var(--rose-soft); color: var(--rose); flex: none; }
+  .ic svg { width: 16px; height: 16px; }
+  .skill p { font-size: 14.5px; color: var(--ink-2); line-height: 1.65; }
+
+  /* ---------- PROJECTS ---------- */
+  .featured { display: grid; grid-template-columns: 1.1fr 1fr; background: var(--card); border-radius: 22px; overflow: hidden; box-shadow: var(--shadow); border: 1px solid var(--line); margin-bottom: 1.6rem; }
+  .featured-body { padding: 2.6rem; display: flex; flex-direction: column; }
+  .tagline { display: inline-flex; align-self: flex-start; font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; padding: 5px 13px; border-radius: 999px; background: var(--gold-soft); color: #8a6a2e; margin-bottom: 1.1rem; }
+  .tagline.rose { background: var(--rose-soft); color: var(--rose-deep); }
+  .p-title { font-family: var(--serif); font-size: 30px; font-weight: 600; color: var(--navy); line-height: 1.2; margin-bottom: .9rem; }
+  .p-desc { color: var(--ink-2); font-size: 15.5px; margin-bottom: 1.3rem; }
+  .p-list { list-style: none; display: grid; gap: .6rem; margin-bottom: 1.6rem; }
+  .p-list li { position: relative; padding-left: 22px; color: var(--ink-2); font-size: 15px; }
+  .p-list li::before { content: ''; position: absolute; left: 2px; top: .7em; width: 8px; height: 8px; border-radius: 50%; background: var(--rose); box-shadow: 0 0 0 3px var(--rose-soft); }
+  .metrics { display: grid; grid-template-columns: repeat(3, 1fr); background: var(--blush); border-radius: 14px; margin-bottom: 1.5rem; }
+  .metric { padding: 1rem 1.15rem; border-right: 1px solid var(--blush-2); }
+  .metric:last-child { border-right: none; }
+  .metric b { display: block; font-family: var(--serif); font-size: 24px; font-weight: 600; color: var(--navy); }
+  .metric span { font-size: 12.5px; color: var(--ink-2); }
+  .tags { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 1.4rem; }
+  .tag { font-size: 12.5px; padding: 4px 12px; border-radius: 999px; background: var(--ivory); border: 1px solid var(--line); color: var(--ink-2); }
+  .link { display: inline-flex; align-items: center; gap: 7px; margin-top: auto; align-self: flex-start; font-weight: 600; font-size: 15px; color: var(--rose-deep); border-bottom: 1.5px solid var(--line-rose); padding-bottom: 2px; transition: border-color .2s, color .2s; }
+  .link:hover { color: var(--navy); border-color: var(--gold); }
+
+  .featured-media { position: relative; min-height: 420px; background: var(--blush); }
+  .featured-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .media-tag { position: absolute; left: 18px; bottom: 18px; font-size: 13px; font-weight: 500; padding: 6px 14px; border-radius: 999px; background: rgba(22,33,61,0.82); color: #fbf7f3; }
+
+  .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.6rem; }
+  .card { background: var(--card); border-radius: var(--r); padding: 2rem; display: flex; flex-direction: column; border: 1px solid var(--line); box-shadow: 0 10px 26px -22px rgba(22,33,61,0.35); transition: transform .2s, box-shadow .2s, border-color .2s; position: relative; overflow: hidden; }
+  .card::before { content: ''; position: absolute; left: 0; right: 0; top: 0; height: 3px; background: linear-gradient(90deg, var(--rose), var(--gold)); opacity: 0; transition: opacity .2s; }
+  .card:hover { transform: translateY(-3px); box-shadow: var(--shadow); border-color: var(--line-rose); }
+  .card:hover::before { opacity: 1; }
+  .card .p-title { font-size: 22px; }
+  .card .p-desc { font-size: 15px; }
+
+  /* ---------- GALLERY ---------- */
+  .gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.4rem; }
+  .gallery figure { background: var(--card); border-radius: var(--r); overflow: hidden; box-shadow: 0 10px 26px -20px rgba(22,33,61,0.4); }
+  .gallery img { width: 100%; aspect-ratio: 4/3; object-fit: cover; transition: transform .5s ease; }
+  .gallery figure:hover img { transform: scale(1.03); }
+  .gallery figcaption { font-size: 14px; color: var(--ink-2); padding: .9rem 1.2rem; border-top: 1px solid var(--line); }
+  .gallery figcaption b { color: var(--rose-deep); font-weight: 600; margin-right: 6px; }
+
+  /* ---------- EDUCATION ---------- */
+  .edu { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; }
+  .edu-card { display: flex; gap: 1.2rem; align-items: flex-start; background: var(--card); border-radius: var(--r); padding: 1.8rem; border: 1px solid var(--line); box-shadow: 0 10px 26px -22px rgba(22,33,61,0.35); }
+  .edu-card .ic { width: 46px; height: 46px; background: var(--gold-soft); color: #8a6a2e; }
+  .edu-card .ic svg { width: 20px; height: 20px; }
+  .edu-card h3 { font-family: var(--serif); font-size: 21px; font-weight: 600; color: var(--navy); margin-bottom: 2px; }
+  .edu-card p { color: var(--ink-2); font-size: 15px; }
+  .edu-card .when { font-size: 12.5px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--rose); margin-top: .5rem; }
+
+  /* ---------- CV BAND ---------- */
+  .cv-band { background: var(--navy); color: #fbf7f3; position: relative; overflow: hidden; }
+  .cv-band::before { content: ''; position: absolute; width: 420px; height: 420px; right: -120px; top: -200px; border-radius: 50%; background: radial-gradient(circle, rgba(181,98,111,0.3), transparent 65%); }
+  .cv-inner { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; padding: 64px 0; }
+  .cv-inner h3 { font-family: var(--serif); font-size: 32px; font-weight: 600; margin-bottom: 4px; }
+  .cv-inner h3 em { color: #e8b9bf; font-weight: 500; }
+  .cv-inner p { color: rgba(251,247,243,0.72); }
+
+  /* ---------- CONTACT ---------- */
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+  .contact-lead { color: var(--ink-2); font-size: 17px; max-width: 460px; }
+  .c-list { background: var(--card); border-radius: var(--r); overflow: hidden; border: 1px solid var(--line); box-shadow: 0 10px 26px -22px rgba(22,33,61,0.35); }
+  .c-row { display: grid; grid-template-columns: 44px 1fr auto; align-items: center; gap: 1rem; padding: 1.15rem 1.4rem; border-bottom: 1px solid var(--line); transition: background .2s; }
+  .c-row:last-child { border-bottom: none; }
+  .c-row:hover { background: var(--blush); }
+  .c-row .ic { width: 40px; height: 40px; }
+  .c-row small { display: block; font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+  .c-row .val { font-size: 15.5px; font-weight: 500; color: var(--navy); overflow-wrap: anywhere; }
+  .c-row > svg { color: var(--rose); }
+
+  footer { background: var(--navy); color: rgba(251,247,243,0.6); padding: 1.8rem 0; font-size: 13.5px; }
+  .foot { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+  .foot .logo { font-size: 17px; }
+
+  /* reveal */
+  .reveal { opacity: 0; transform: translateY(16px); transition: opacity .7s ease, transform .7s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 960px) {
+    .hero-grid, .about-grid, .contact-grid, .featured { grid-template-columns: 1fr; }
+    .portrait { justify-self: center; max-width: 360px; }
+    .featured-media { min-height: 300px; order: -1; }
+    .glance-row { grid-template-columns: repeat(2, 1fr); }
+    .g:nth-child(2) { border-right: none; }
+    .g:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+    .projects-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 760px) {
+    .wrap { padding: 0 1.1rem; }
+    .menu-btn { display: grid; }
+    .nav-links { position: absolute; top: 68px; left: 0; right: 0; flex-direction: column; align-items: stretch; background: var(--navy); padding: .75rem 1rem 1.1rem; gap: .2rem; display: none; border-bottom: 1px solid rgba(195,161,101,0.2); }
+    .nav-links.open { display: flex; }
+    .nav-links .btn-sm { margin: .4rem 0 0; justify-content: center; }
+    #hero { padding: 116px 0 90px; }
+    .portrait-note { left: 8px; bottom: 16px; }
+    section.block { padding: 76px 0; }
+    .skills, .projects-grid, .gallery, .edu { grid-template-columns: 1fr; }
+    .featured-body, .card { padding: 1.6rem; }
+    .metric { padding: .85rem .8rem; }
+    .metric b { font-size: 20px; }
+    .c-row { grid-template-columns: 40px 1fr auto; padding: 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= NAV ================= -->
+<nav>
+  <div class="wrap nav-inner">
+    <a href="#hero" class="logo">Riana <em>Moodley</em></a>
+    <button class="menu-btn" id="menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <div class="nav-links" id="nav-links">
+      <a class="nav-item" href="#about">About</a>
+      <a class="nav-item" href="#projects">Projects</a>
+      <a class="nav-item" href="#gallery">Gallery</a>
+      <a class="nav-item" href="#education">Education</a>
+      <a class="nav-item" href="#contact">Contact</a>
+      <a href="Updated_CV.pdf" target="_blank" rel="noopener" class="btn btn-gold btn-sm">My CV</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header id="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">Electrical Engineer · South Africa</div>
+      <h1>Riana <em>Moodley</em></h1>
+      <p class="hero-role">BEng Electrical Engineering — <b>power, energy &amp; automation</b></p>
+      <p class="hero-lead">Final-year student at the University of Zululand, Richards Bay. I enjoy turning theory into working hardware — from a swing-powered energy harvester to PLC-controlled process logic.</p>
+      <div class="hero-ctas">
+        <a href="#projects" class="btn btn-rose">View my projects
+          <svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14m0 0-6-6m6 6 6-6"/></svg>
+        </a>
+        <a href="Updated_CV.pdf" target="_blank" rel="noopener" class="btn btn-light">View CV</a>
+        <a href="#contact" class="btn btn-light">Get in touch</a>
+      </div>
+    </div>
+
+    <div class="portrait">
+      <div class="portrait-frame">
+        <img src="swing-1.jpg" alt="Riana Moodley testing her swing-powered generator">
+      </div>
+      <div class="portrait-note"><b>Final-year project</b>Swing-powered generator, built &amp; tested</div>
+    </div>
+  </div>
+</header>
+
+<!-- ================= AT A GLANCE ================= -->
+<div class="glance">
+  <div class="wrap">
+    <div class="glance-row">
+      <div class="g"><b>4th year</b><span>BEng Electrical Engineering</span></div>
+      <div class="g"><b>South32</b><span>Bursary, awarded on merit</span></div>
+      <div class="g"><b>4 projects</b><span>Energy, automation &amp; IoT</span></div>
+      <div class="g"><b>2026</b><span>Graduating</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= ABOUT ================= -->
+<section class="block" id="about">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <div class="kicker">About me</div>
+        <h2>Engineer in <em>the making</em></h2>
+      </div>
+    </div>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p>I'm a final-year <strong>Electrical Engineering</strong> student at the University of Zululand's Richards Bay campus. My work spans <strong>power systems, energy harvesting, PLC-based automation, telecommunications</strong> and <strong>MATLAB simulation</strong>.</p>
+        <p>I like closing the gap between a model and a real build. For my final-year project I modelled a swing-driven generator in Simulink, then redesigned the drivetrain during the build when the original parts weren't available, and tested the output on the finished rig.</p>
+        <p>I'm looking for graduate roles in <strong>energy, robotics, automation and power</strong>, and I intend to register with ECSA as a Candidate Engineer after graduating.</p>
+        <div class="mini">Outside engineering</div>
+        <div class="pills"><span class="pill">Taekwondo</span><span class="pill">Running</span><span class="pill">Gym</span><span class="pill">Art</span></div>
+      </div>
+
+      <div class="skills reveal">
+        <div class="skill">
+          <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></span>Power &amp; machines</h3>
+          <p>Power systems, generation and distribution, DC machines, power electronics and energy harvesting.</p>
+        </div>
+        <div class="skill">
+          <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9h4M7 13h10M7 17h6"/></svg></span>Automation</h3>
+          <p>PLC programming with ladder logic and function block diagrams, process control and SCADA concepts.</p>
+        </div>
+        <div class="skill">
+          <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0M2 9a14 14 0 0 1 20 0"/><circle cx="12" cy="19" r="1"/></svg></span>Telecommunications</h3>
+          <p>Signal transmission, modulation techniques, communication protocols and network fundamentals.</p>
+        </div>
+        <div class="skill">
+          <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 5-6"/></svg></span>Simulation &amp; tools</h3>
+          <p>MATLAB, Simulink, PSpice, PSCAD and Microsoft Office for analysis, modelling and reporting.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROJECTS ================= -->
+<section class="block blush" id="projects">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <div class="kicker">Selected work</div>
+        <h2>Projects I'm <em>proud of</em></h2>
+      </div>
+      <p class="sec-note">University projects in energy, automation and smart systems. Each one links to the full report.</p>
+    </div>
+
+    <article class="featured reveal">
+      <div class="featured-body">
+        <span class="tagline">Featured · Final-year project</span>
+        <h3 class="p-title">Swing-Powered Electrical Generator</h3>
+        <p class="p-desc">A kinetic energy harvester that converts the back-and-forth motion of a swing into electrical energy for USB charging.</p>
+        <ul class="p-list">
+          <li>Modelled the swing as a nonlinear pendulum in MATLAB/Simulink to understand its motion and size the drivetrain.</li>
+          <li>A bicycle freewheel turns the two-way swing motion into one-way rotation, driving a 320 RPM PMDC generator through a chain drive.</li>
+          <li>Redesigned during the build: welded a 50T sprocket onto the freewheel to raise the gear ratio, and machined the shaft to fit.</li>
+          <li>Output conditioned on stripboard and boosted through an MT3608 module to a USB output.</li>
+        </ul>
+        <div class="metrics">
+          <div class="metric"><b>50:12</b><span>Gear ratio</span></div>
+          <div class="metric"><b>≈4.8 V</b><span>Measured output</span></div>
+          <div class="metric"><b>320</b><span>RPM rated</span></div>
+        </div>
+        <div class="tags">
+          <span class="tag">Energy harvesting</span><span class="tag">MATLAB / Simulink</span><span class="tag">DC machines</span><span class="tag">Power electronics</span><span class="tag">Mechanical design</span>
+        </div>
+        <a class="link" href="Swing_Power_Generator.pdf" target="_blank" rel="noopener">Read the full report
+          <svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+      </div>
+      <div class="featured-media">
+        <img src="swing-4.jpg" alt="Close-up of the 50T sprocket and chain driving the generator" loading="lazy" style="object-position: center 40%;">
+        <span class="media-tag">Sprocket &amp; chain drive</span>
+      </div>
+    </article>
+
+    <div class="projects-grid">
+      <article class="card reveal">
+        <span class="tagline rose">Automation</span>
+        <h3 class="p-title">Fertilizer Batch Mixing Automation</h3>
+        <p class="p-desc">University project on a PLC-controlled batch mixing process for fertilizer production, sequencing ingredient dosing, mixing stages and quality checks.</p>
+        <div class="tags"><span class="tag">PLC</span><span class="tag">Ladder logic</span><span class="tag">Process control</span></div>
+        <a class="link" href="PLC.pdf" target="_blank" rel="noopener">Read the report
+          <svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+      </article>
+
+      <article class="card reveal">
+        <span class="tagline rose">Control</span>
+        <h3 class="p-title">Smart Traffic Lighting System</h3>
+        <p class="p-desc">A traffic-light controller that adjusts signal timing to traffic density, using sensor inputs and automated control logic to improve flow.</p>
+        <div class="tags"><span class="tag">Embedded systems</span><span class="tag">PLC</span><span class="tag">Sensors</span></div>
+        <a class="link" href="Traffic_Light.pdf" target="_blank" rel="noopener">Read the report
+          <svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+      </article>
+
+      <article class="card reveal">
+        <span class="tagline rose">IoT · Energy</span>
+        <h3 class="p-title">Smart Campus System</h3>
+        <p class="p-desc">A smart-campus design combining IoT sensors, building automation and energy management to make better use of resources and cut running costs.</p>
+        <div class="tags"><span class="tag">IoT</span><span class="tag">Building automation</span><span class="tag">Energy</span></div>
+        <a class="link" href="Smart_campus.pdf" target="_blank" rel="noopener">Read the report
+          <svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GALLERY ================= -->
+<!-- Photos: swing-1.jpg to swing-4.jpg in the same folder as this file. -->
+<section class="block" id="gallery">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <div class="kicker">Build gallery</div>
+        <h2>The swing generator <em>in action</em></h2>
+      </div>
+      <p class="sec-note">Photos from building and testing my final-year project.</p>
+    </div>
+    <div class="gallery reveal">
+      <figure><img src="swing-1.jpg" alt="Riana testing the swing generator by swinging on it" loading="lazy"><figcaption><b>01</b>Testing the generator on the swing</figcaption></figure>
+      <figure><img src="swing-2.jpg" alt="Full view of the A-frame swing rig with the drive shaft and generator platform" loading="lazy"><figcaption><b>02</b>The complete rig: A-frame, drive shaft and generator platform</figcaption></figure>
+      <figure><img src="swing-3.jpg" alt="Front view of the swing showing the shaft and pillow-block bearings" loading="lazy"><figcaption><b>03</b>Swing shaft running in pillow-block bearings</figcaption></figure>
+      <figure><img src="swing-4.jpg" alt="Close-up of the 50T sprocket and chain driving the generator and boost circuit" loading="lazy" style="object-position: center 45%;"><figcaption><b>04</b>50T sprocket and chain drive to the generator and boost circuit</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EDUCATION ================= -->
+<section class="block blush" id="education">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <div class="kicker">Background</div>
+        <h2>Education &amp; <em>funding</em></h2>
+      </div>
+    </div>
+    <div class="edu">
+      <div class="edu-card reveal">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg></span>
+        <div><h3>BEng Electrical Engineering</h3><p>University of Zululand, Richards Bay campus</p><div class="when">2023 — 2026</div></div>
+      </div>
+      <div class="edu-card reveal">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="m8.5 14.5-1.5 7.5 5-3 5 3-1.5-7.5"/></svg></span>
+        <div><h3>South32 Bursary</h3><p>Awarded on academic merit</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CV BAND ================= -->
+<section class="cv-band">
+  <div class="wrap cv-inner">
+    <div>
+      <h3>Want the <em>full picture?</em></h3>
+      <p>Open my CV for a complete overview of my education, projects and skills.</p>
+    </div>
+    <a href="Updated_CV.pdf" target="_blank" rel="noopener" class="btn btn-gold">View my CV (PDF)</a>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="block" id="contact">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <div class="kicker">Contact</div>
+        <h2>Let's <em>connect</em></h2>
+      </div>
+    </div>
+    <div class="contact-grid">
+      <p class="contact-lead reveal">I'm open to graduate programmes, engineering roles, research collaborations and international exchanges. The quickest way to reach me is by email.</p>
+      <div class="c-list reveal">
+        <a class="c-row" href="mailto:moodleyriana10@gmail.com">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+          <div><small>Email</small><span class="val">moodleyriana10@gmail.com</span></div>
+          <svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
+        </a>
+        <a class="c-row" href="https://www.linkedin.com/in/riana-moodley-35b673258/" target="_blank" rel="noopener">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 11v6M8 7.5v.01M12 17v-6M16 17v-3.5a2.5 2.5 0 0 0-4 0"/></svg></span>
+          <div><small>LinkedIn</small><span class="val">Riana Moodley</span></div>
+          <svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
+        </a>
+        <a class="c-row" href="Updated_CV.pdf" target="_blank" rel="noopener">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg></span>
+          <div><small>CV</small><span class="val">Open PDF</span></div>
+          <svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <span class="logo">Riana <em>Moodley</em></span>
+    <span>© 2026 · BEng Electrical Engineering · University of Zululand</span>
+  </div>
+</footer>
+
+<script>
+  // Mobile menu
+  const menuBtn = document.getElementById('menu-btn');
+  const navLinks = document.getElementById('nav-links');
+  menuBtn.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', open);
+  });
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    menuBtn.setAttribute('aria-expanded', 'false');
+  }));
+
+  // Gentle fade-in on scroll
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
